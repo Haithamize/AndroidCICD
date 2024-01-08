@@ -1,0 +1,27 @@
+name: buildApk
+
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout the code
+        uses: actions/checkout@v3
+
+      - name: setup jdk
+        uses: actions/setup-java@v4.0.0
+        with:
+          java-version: "17"
+          java-distribution: "zulu"
+
+      - name: build with gradle
+        run: ./gradlew build
+
+      - name: upload apk artifact
+        uses: actions/upload-artifact@v4.0.0
+        with:
+          name: MyAndroidCICD.apk
+          path: app/build/outputs/apk/debug/app-debug.apk
+
