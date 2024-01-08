@@ -13,8 +13,8 @@ jobs:
       - name: setup jdk
         uses: actions/setup-java@v4.0.0
         with:
-          java-version: "17"
-          java-distribution: "zulu"
+          java-version: '17'
+          java-distribution: 'zulu'
 
       - name: build with gradle
         run: ./gradlew build
