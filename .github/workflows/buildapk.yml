@@ -12,7 +12,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Setup Java JDK
-        uses: actions/setup-java@v2  # Updated version
+        uses: actions/setup-java@v4  # Updated version
         with:
           java-version: '17'
           distribution: 'adopt'  # Corrected the parameter name
