@@ -15,7 +15,10 @@ jobs:
         uses: actions/setup-java@v4  # Updated version
         with:
           java-version: '17'
-          distribution: 'adopt'  # Corrected the parameter name
+          distribution: 'adopt'
+
+      - name: Run unit tests
+        run: ./gradlew testDebugUnitTest
 
       - name: Build with Gradle
         run: ./gradlew build
